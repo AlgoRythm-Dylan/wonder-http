@@ -20,6 +20,7 @@ fn defaultServerHandleConnectionFn(server: *Server, connection: *net.Server.Conn
         is_more_data = count_read >= buf.len;
         std.debug.print("{s}", .{ buf[0..count_read] });
     }
+    _ = try connection.stream.write("HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n\r\nHello world!");
     std.debug.print("\n\nClosing stream\n", .{});
     connection.stream.close();
 }
