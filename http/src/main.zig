@@ -1,5 +1,6 @@
-const std = @import("std");
+const server = @import("./server.zig");
 
 pub fn main() !void {
-    std.debug.print("All your {s} are belong to us.\n", .{"codebase"});
+    var sv: server.Server = .{ .port = 8081 };
+    try sv.start();
 }
