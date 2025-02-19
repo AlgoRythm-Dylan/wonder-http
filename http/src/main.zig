@@ -1,6 +1,6 @@
-const server = @import("./server.zig");
+const Server = @import("./server.zig");
 
 pub fn main() !void {
-    var sv: server.Server = .{ .port = 8081 };
+    var sv: Server = .{ .port = 8081 };
     try sv.start();
 }
