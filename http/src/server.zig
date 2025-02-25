@@ -9,6 +9,7 @@ socket: ?net.Server = null,
 port: u16 = 80,
 loopFn: functions.ServerLoopFn = functions.defaultServerLoopFn,
 handleConnectionFn: functions.ServerHandleConnectionFn = functions.defaultServerHandleConnectionFn,
+createMessageAllocatorFn: functions.ServerCreateMessageAllocatorFn = functions.defaultServerCreateMessageAllocatorFn,
 
 pub fn start(self: *Self) !void {
     self.socket = try socklib.createServerSocket(self.port);

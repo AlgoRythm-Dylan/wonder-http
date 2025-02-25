@@ -24,3 +24,8 @@ pub fn defaultServerHandleConnectionFn(server: *Server, connection: *net.Server.
     std.debug.print("\n\nClosing stream\n", .{});
     connection.stream.close();
 }
+
+pub const ServerCreateMessageAllocatorFn = *const fn(*Server) anyerror!std.mem.Allocator;
+pub fn defaultServerCreateMessageAllocatorFn(server: *Server) anyerror!std.mem.Allocator {
+    _ = server;
+}
