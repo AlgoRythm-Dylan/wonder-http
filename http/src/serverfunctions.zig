@@ -29,3 +29,7 @@ pub const ServerCreateMessageAllocatorFn = *const fn(*Server) anyerror!std.mem.A
 pub fn defaultServerCreateMessageAllocatorFn(server: *Server) anyerror!std.mem.Allocator {
     _ = server;
 }
+
+pub const ServerFunctionCollection = struct {
+
+};
